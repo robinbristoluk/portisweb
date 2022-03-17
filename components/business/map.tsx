@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { MapContainer } from 'react-leaflet';
 
-const Map = () => {
-  return  window ? 
-            <MapContainer /> :
-            null;
+const Map: React.FC = () => {
+  return <MapContainer />
 }
 
 export default Map;

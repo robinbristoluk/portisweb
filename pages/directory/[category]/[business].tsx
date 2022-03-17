@@ -39,7 +39,7 @@ const BusinessPage: NextPage<BusinessPageProps> = ({business, category}) => {
 
                     <EmailAddresses addresses={business.emailAddresses} />
 
-                    <Map />
+                    {typeof window !== 'undefined' && <Map />}
                     
                 </div>
             </div>
