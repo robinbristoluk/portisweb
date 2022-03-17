@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
+import Heading from '../components/common/Heading'
+import BreadCrumb from '../components/layout/BreadCrumb'
 
 const Home: NextPage = () => {
   return (
     <div>
-      <h2>Home Page</h2>
+      <BreadCrumb />
+      <Heading>Home Page</Heading>
     </div>
   )
 }

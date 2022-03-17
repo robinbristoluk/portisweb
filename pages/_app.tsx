@@ -14,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Header>
           <h1>Portisweb</h1>
         </Header>
-        <Component {...pageProps} />
+        <div className='bg-white p-3'>
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </div>
     </>
