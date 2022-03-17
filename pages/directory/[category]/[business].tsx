@@ -1,8 +1,8 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import EmailAddresses from '../../../components/business/emailAddresses';
 import TelephoneNumbers from '../../../components/business/telephoneNumbers';
-import Map from '../../../components/business/map';
 import Heading from '../../../components/common/Heading';
 import Address from '../../../components/business/address';
 import BreadCrumb from '../../../components/layout/BreadCrumb';
@@ -11,6 +11,7 @@ import * as categoriesSvc from '../../../services/categoryService';
 
 import { Business } from '../../../types/Business';
 import { CategorySummary } from '../../../types/CategorySummary';
+import DynamicMap from '../../../components/business/dynamicMap';
 
 interface BusinessPageProps {
     business: Business;
@@ -19,6 +20,12 @@ interface BusinessPageProps {
 
 const BusinessPage: NextPage<BusinessPageProps> = ({business, category}) => {
     return (
+        <>
+        <Head>
+        <link rel="stylesheet" href="../../../node_modules/leaflet/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossOrigin=""/>
+        </Head>
         <div>
             <BreadCrumb 
                 segments={[
@@ -39,11 +46,12 @@ const BusinessPage: NextPage<BusinessPageProps> = ({business, category}) => {
 
                     <EmailAddresses addresses={business.emailAddresses} />
 
-                    {typeof window !== 'undefined' && <Map />}
+                    <DynamicMap />
                     
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
