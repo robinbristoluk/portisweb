@@ -33,5 +33,5 @@ export const getFilteredBlogs = (query: object): Promise<BlogSummary[]> => {
 }
 
 export const getBlogBySlug = async (slug: string): Promise<BlogSummary|undefined> => {
-    return blogs.find(b => b.slug === slug);
+    return Promise.resolve(blogs.find(b => b.slug === slug));
 } 
