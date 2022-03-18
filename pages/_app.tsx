@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import BreakpointVisualiser from '../components/development/breakpoint-visualiser';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </div>
         <Footer />
+        <BreakpointVisualiser />
       </div>
     </>
   );

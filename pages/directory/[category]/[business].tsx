@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import EmailAddresses from '../../../components/business/emailAddresses';
 import TelephoneNumbers from '../../../components/business/telephoneNumbers';
+
+import Map from '../../../components/business/map';
 import Heading from '../../../components/common/Heading';
 import Address from '../../../components/business/address';
 import BreadCrumb from '../../../components/layout/BreadCrumb';
@@ -11,7 +13,6 @@ import * as categoriesSvc from '../../../services/categoryService';
 
 import { Business } from '../../../types/Business';
 import { CategorySummary } from '../../../types/CategorySummary';
-import DynamicMap from '../../../components/business/dynamicMap';
 
 interface BusinessPageProps {
     business: Business;
@@ -35,7 +36,7 @@ const BusinessPage: NextPage<BusinessPageProps> = ({business, category}) => {
                 ]}
             />
             <Heading>{business.title}</Heading>
-            <div className='flex gap-4'>
+            <div className='flex gap-6'>
                 <div className='basis-2/3'>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident labore non quis adipisci, voluptate hic illum amet inventore quaerat vero perferendis atque molestiae omnis doloremque voluptatum, ea optio possimus blanditiis.</p>
                 </div>
@@ -46,7 +47,7 @@ const BusinessPage: NextPage<BusinessPageProps> = ({business, category}) => {
 
                     <EmailAddresses addresses={business.emailAddresses} />
 
-                    <DynamicMap />
+                    <Map />
                     
                 </div>
             </div>
