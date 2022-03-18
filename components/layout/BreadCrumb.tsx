@@ -21,10 +21,10 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({segments = []}) => {
             <>
                 <BreadCrumbItem segment={{ text: 'Home', link: '/'}} />
                 {segments.map(segment => {
-                    return <>
+                    return <React.Fragment key={segment.text}>
                         &gt;
                         <BreadCrumbItem segment={segment} />
-                    </>
+                    </React.Fragment>
                 })}
             </>
         }

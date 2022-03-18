@@ -19,7 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </div>
         <Footer />
-        <BreakpointVisualiser />
+        {
+          /* TODO: Use dynamic import */
+          process.env.NODE_ENV === 'development' && <BreakpointVisualiser />
+        }
       </div>
     </>
   );
